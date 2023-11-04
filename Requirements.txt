@@ -1,0 +1,9 @@
+# Requirements
+
+To run this project and execute the code, you'll need the following Python packages. You can install these packages using `pip` and the provided version numbers.
+
+```plaintext
+Google Colab/Jupyter Notebook
+numpy==1.18.2
+pandas==1.0.3
+statsmodels==0.11.0
