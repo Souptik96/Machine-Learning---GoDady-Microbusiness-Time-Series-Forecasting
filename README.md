@@ -26,9 +26,6 @@ To replicate or further explore this project, you can follow these steps:
 4. Explore the Jupyter Notebooks provided for data preprocessing, analysis, and modeling.
 5. Experiment with different hyperparameters, data sources, or model variations as needed.
 
-## Data Sources
-Data can be donwloaded from: https://www.kaggle.com/competitions/godaddy-microbusiness-density-forecasting/data
-
 ## Results
 Results will show you tables with the predicted values for the density. Result values and accuracy depends on the model we are using such as ARIMA/SARIMA etc.
 
