@@ -1,0 +1,9 @@
+# Data used in this project can be downloaded from:
+- https://www.kaggle.com/competitions/godaddy-microbusiness-density-forecasting/data, OR,
+- kaggle competitions download -c godaddy-microbusiness-density-forecasting
+
+# Description:
+A great deal of data is publicly available about counties and we have not attempted to gather it all here. You are strongly encouraged to use external data sources for features.
+Your challenge in this competition is to forecast microbusiness activity across the United States, as measured by the density of microbusinesses in US counties. Microbusinesses are often too small or too new to show up in traditional economic data sources, but microbusiness activity may be correlated with other economic indicators of general interest.
+
+As historic economic data are widely available, this is a forecasting competition. The forecasting phase public leaderboard and final private leaderboard will be determined using data gathered after the submission period closes. You will make static forecasts that can only incorporate information available before the end of the submission period. This means that while we will rescore submissions during the forecasting period we will not rerun any notebooks.
