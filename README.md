@@ -27,7 +27,7 @@ To replicate or further explore this project, you can follow these steps:
 5. Experiment with different hyperparameters, data sources, or model variations as needed.
 
 ## Data Sources
-- [Source 1]: https://www.kaggle.com/competitions/godaddy-microbusiness-density-forecasting/data
+Data can be donwloaded from: https://www.kaggle.com/competitions/godaddy-microbusiness-density-forecasting/data
 
 ## Results
 Results will show you tables with the predicted values for the density. Result values and accuracy depends on the model we are using such as ARIMA/SARIMA etc.
