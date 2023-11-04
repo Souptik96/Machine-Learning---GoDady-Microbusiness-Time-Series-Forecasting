@@ -1,25 +1,52 @@
 Description of the models used in this project:
 
-**1. ARIMA (AutoRegressive Integrated Moving Average):**
-ARIMA is a widely used statistical model for time series forecasting. It combines three key components to model time series data:
+# Time Series Forecasting Models: ARIMA and SARIMA
 
-- **AutoRegressive (AR) Component**: This part of ARIMA deals with the relationship between the current observation and its past values. It considers how past values in the time series affect the current value, and it's based on the concept of autoregression.
+## ARIMA (AutoRegressive Integrated Moving Average)
 
-- **Integrated (I) Component**: The "I" in ARIMA stands for "Integrated." This component represents the number of differences needed to make the time series stationary. Stationarity means that the statistical properties of the series (like mean and variance) remain constant over time. By differencing the time series, it becomes possible to remove trends or seasonality, making it suitable for modeling.
+**Overview:**
+ARIMA, which stands for AutoRegressive Integrated Moving Average, is a powerful statistical model used for time series forecasting. It combines three key components to model time series data:
 
-- **Moving Average (MA) Component**: The MA component focuses on the relationship between the current value and past forecast errors. It helps capture and model the impact of past prediction errors on the current value.
+- **AutoRegressive (AR) Component**: This component analyzes the relationship between the current observation and its past values, capturing how past values in the time series influence the present.
 
-ARIMA is a powerful and flexible model that can be adjusted to fit various time series data by selecting appropriate values for its parameters (p, d, q). It can handle non-stationary data and has the potential to capture both short-term and long-term patterns in the time series.
+- **Integrated (I) Component**: The "I" in ARIMA represents differencing, which is used to make the time series stationary. Stationarity ensures that statistical properties like mean and variance remain constant over time, making the data suitable for modeling.
 
-**2. SARIMA (Seasonal ARIMA):**
-SARIMA is an extension of the ARIMA model that incorporates seasonality into the time series forecasting. It's particularly useful when dealing with data that exhibits repeating patterns or seasonal fluctuations. SARIMA includes the following components:
+- **Moving Average (MA) Component**: The MA component focuses on the connection between the current value and past forecast errors, helping model the impact of past prediction errors on the current value.
 
-- **Seasonal AutoRegressive (SAR) Component**: Similar to the AR component in ARIMA, the SAR component models the relationship between the current value and past values, but it focuses on the seasonal patterns or periodic behaviors in the data.
+**Key Features:**
+- Flexible and adaptable to various time series data.
+- Suitable for non-stationary data.
+- Capable of capturing short-term and long-term patterns in the time series.
 
-- **Seasonal Integrated (SI) Component**: Just as the "I" component in ARIMA, the SI component deals with differencing to make the data stationary. However, it is applied to the seasonal component of the time series.
+## SARIMA (Seasonal ARIMA)
 
-- **Seasonal Moving Average (SMA) Component**: This part of SARIMA is analogous to the MA component in ARIMA. It captures the impact of past seasonal forecast errors on the current value.
+**Overview:**
+SARIMA, or Seasonal AutoRegressive Integrated Moving Average, is an extension of the ARIMA model that accounts for seasonality in time series forecasting. It is particularly effective when dealing with data that exhibits repeating patterns or seasonal fluctuations.
 
-SARIMA is particularly effective for time series data with strong seasonal patterns, making it suitable for tasks like monthly sales forecasting, temperature forecasting, and more. It provides a powerful framework for modeling and predicting data with both non-seasonal and seasonal elements.
+**Components:**
+- **Seasonal AutoRegressive (SAR) Component**: Models the relationship between the current value and past values, focusing on seasonal patterns or periodic behaviors in the data.
 
-Both ARIMA and SARIMA models are valuable tools in time series analysis, enabling data scientists and analysts to make accurate predictions and uncover underlying patterns within complex time-dependent data. The choice between them depends on the characteristics of the specific time series you are working with, including whether or not seasonality is present.
+- **Seasonal Integrated (SI) Component**: Similar to the "I" component in ARIMA, this deals with differencing to make the data stationary, but it is applied to the seasonal component of the time series.
+
+- **Seasonal Moving Average (SMA) Component**: Captures the impact of past seasonal forecast errors on the current value, much like the MA component in ARIMA.
+
+**Key Features:**
+- Effective for time series data with strong seasonal patterns.
+- Suitable for tasks such as monthly sales forecasting, temperature forecasting, and more.
+- Provides a framework for modeling and predicting data with both non-seasonal and seasonal elements.
+
+## Usage
+To apply ARIMA and SARIMA models to your time series data, consider using libraries like Python's statsmodels or R's forecast package. Both models require parameter tuning to suit the specific characteristics of your data.
+
+### Example (Python with statsmodels):
+```python
+from statsmodels.tsa.arima_model import ARIMA
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+
+# Fit an ARIMA model
+arima_model = ARIMA(data, order=(p, d, q))
+arima_results = arima_model.fit()
+
+# Fit a SARIMA model
+sarima_model = SARIMAX(data, order=(p, d, q), seasonal_order=(P, D, Q, S))
+sarima_results = sarima_model.fit()
